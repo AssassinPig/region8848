@@ -1,0 +1,30 @@
+<% provide(:title, 'admin' )%>
+<% provide(:title_content, 'I am back!!!') %>
+
+    <div class="container">
+    <%= form_for :new_passage, :url => new_article_path, :method => :get do |f| %>
+      <div>
+      <%= f.label :title %>
+      <%= f.text_field :title, size: 40 %>
+      </div>
+      <div>
+          <%= f.text_area :content , size: "120x30" %>
+      <span>
+      <%= f.submit %>
+      </span>
+      </div>
+    <% end %>
+    </div>
+
+<ul class="passages">
+    <% @passages.each do |passage| %> 
+        <li>
+        <p><h1><%= link_to passage.title, '#' %></h1></p>
+        <p><%= passage.content %></p>
+        </li>
+        <li>
+        <%= link_to "delete", article_path(passage), method: :delete, data: {confirm: "You sure?"} %>
+        </li>
+    <% end %>
+</ul>
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Region8848</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+
+</head>
+<body data-offset="50">
+    <%= render 'layouts/header' %>
+    <div class="container">
+        <div class="row row-offcanvas row-offcanvas-right">
+            <div class="col-xs-12 col-sm-9">
+            <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+            </p>
+
+                <div class="jumbotron">
+                  <h1><%= yield(:title) %></h1>
+                  <p><%= yield(:title_content) %></p>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 col-sm-6 col-lg-4">
+                        <%= yield %>
+                    </div>
+                </div>
+        </div>
+        </div>
+    </div>
+
+    <%= render 'layouts/footer' %>
+    <%= debug(params) if Rails.env.development? %>
+</body>
+</html>

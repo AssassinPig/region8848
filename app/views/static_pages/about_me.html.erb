@@ -1,0 +1,21 @@
+<% provide(:title, 'About me' )%>
+<% provide(:title_content, 'we can contact to each other') %>
+<div class="container">
+    <ul>
+        <li>
+        <label>Email:</label>
+        <span class="email">AssassinPig@gmail.com</span>
+        </li>
+
+        <li>
+        <label>github:</label>
+        <span >zserver/zspider</span>
+        </li>
+        <li>
+        <%= form_for(:password, url: static_pages_admin_path) do |f| %>
+            <%= f.password_field :password %>
+            <%= f.submit "admin", class: "btn btn-success" %>
+        <% end %>
+        </li>
+    </ul>
+</div>

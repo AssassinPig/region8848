@@ -1,0 +1,39 @@
+<header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+<div class="container">
+    <div class="navbar-header">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a href="#" class="navbar-brand">Region8848</a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+    <ul class="nav navbar-nav">
+        <li>
+        <%= link_to "主页", static_pages_home_path %>
+        </li>
+        <li>
+        <%= link_to "随手日记", static_pages_notes_path %>
+        </li>
+        <li>
+        <%= link_to "技术类文章", static_pages_passages_path %>
+        </li>
+        <li>
+        <%= link_to "关于我", static_pages_about_me_path %>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+        <form class="navbar-form navbar-right" role="form">
+            <div class="form-group">
+                <input type="text" default="input content to search" placeholder="Search" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Search</button>
+        </form>
+        </li>
+    </ul>
+    </nav>
+</div>
+</header>
