@@ -1,6 +1,7 @@
 Region8848::Application.routes.draw do
 
   resources :articles
+  post "/articles"   => 'articles#create'
   get "static_pages/home"
   get "static_pages/notes"
   get "static_pages/passages"

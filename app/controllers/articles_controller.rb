@@ -1,4 +1,19 @@
 class ArticlesController < ApplicationController
+    def create
+        Rails.logger.debug("articles create")
+        title = params[:new_passage][:title]
+        content = params[:new_passage][:content]
+        catalog = params[:new_passage][:catalog]
+        catalog = 100
+        Rails.logger.debug(content)
+   
+        title = Mysql2::Client.escape(title)
+        content = Mysql2::Client.escape(content)
+        p = Passages.new(title:title, content:content, catalog:catalog)
+        p.save
+        redirect_to root_path
+    end
+
     def new
         title = params[:new_passage][:title]
         content = params[:new_passage][:content]
