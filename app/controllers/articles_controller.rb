@@ -7,8 +7,8 @@ class ArticlesController < ApplicationController
         catalog = 100
         Rails.logger.debug(content)
    
-        title = Mysql2::Client.escape(title)
-        content = Mysql2::Client.escape(content)
+        #title = Mysql2::Client.escape(title)
+        #content = Mysql2::Client.escape(content)
         p = Passages.new(title:title, content:content, catalog:catalog)
         p.save
         redirect_to root_path
