@@ -18,6 +18,8 @@ Region8848::Application.routes.draw do
   # root 'welcome#index'
   root 'static_pages#home'
 
+  get "static_pages/json"
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
