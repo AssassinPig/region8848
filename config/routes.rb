@@ -1,7 +1,11 @@
 Region8848::Application.routes.draw do
 
+  resources :sessions
+  resources :users
   resources :articles
-  post "/articles"   => 'articles#create'
+
+  get "/sign_out" => 'sessions#destroy'
+
   get "static_pages/home"
   get "static_pages/notes"
   get "static_pages/passages"
@@ -17,8 +21,6 @@ Region8848::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   root 'static_pages#home'
-
-  get "static_pages/json"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

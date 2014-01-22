@@ -1,0 +1,9 @@
+<h1>index users</h1>
+<p>index users action</p>
+
+<% @users.each do |user| %>
+    <p>
+    <%= user.nick %><br/>
+    <%= user.email %>
+    </p>
+<% end %>

@@ -1,5 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
+      Rails.logger.debug("home action") 
+      Rails.logger.debug(params);
   end
 
   def notes

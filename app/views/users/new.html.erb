@@ -1,0 +1,17 @@
+<h1>new user</h1>
+<p>new_user.html.erb</p>
+<%= form_for :user, :url => users_path, :method => :post do |f| %>
+    <%= f.label "user name"%>
+    <%= f.text_field :username %>
+
+    <%= f.label "email" %>
+    <%= f.text_field :email %>
+
+    <%= f.label "password" %>
+    <%= f.password_field :password%>
+
+    <%= f.label "password_confirm" %>
+    <%= f.password_field :password_confirm%>
+
+    <%= f.submit "Submit" %>
+<% end %>
