@@ -14,8 +14,10 @@ development:
 
 production:
   adapter: postgresql 
-  database: region8848
-  username: zhufeng
-  password:  
+  database: d641t244mj5ur9 
+  username: khetrhumklwejx 
+  password: 1INp6ng2Iq1iTKIfykQpPjzeMY 
   encoding: utf8
   pool: 5
+  host: ec2-54-197-241-94.compute-1.amazonaws.com
+  port: 5432
