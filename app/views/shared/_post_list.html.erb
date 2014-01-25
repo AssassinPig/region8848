@@ -1,0 +1,7 @@
+<% @posts.each do |post| %> 
+    <% if category == post.category_id %>
+        <li>
+        <p><%= link_to post.title,  post_path(post) %></p>
+        </li>
+    <% end %>
+<% end %>

@@ -5,28 +5,26 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-
+    <link href="http://v3.bootcss.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://v3.bootcss.com/docs-assets/css/docs.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/highlight.js/7.3/styles/github.min.css" rel="stylesheet">
 </head>
 <body data-offset="50">
     <%= render 'layouts/header' %>
+    <div class="bs-header" id="content">
+        <div class="container">
+           <h1><%= yield(:title) %></h1>
+           <p><%= yield(:title_content) %></p>
+        </div>
+    </div>
+
     <div class="container">
         <div class="row row-offcanvas row-offcanvas-right">
-            <div class="col-xs-12 col-sm-9">
-            <p class="pull-right visible-xs">
-            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
-            </p>
-
+            <div>
                 <div class="jumbotron">
-                  <h1><%= yield(:title) %></h1>
-                  <p><%= yield(:title_content) %></p>
+                    <%= yield %>
                 </div>
-
-                <div class="row">
-                    <div class="col-6 col-sm-6 col-lg-4">
-                        <%= yield %>
-                    </div>
-                </div>
-        </div>
+            </div>
         </div>
     </div>
 

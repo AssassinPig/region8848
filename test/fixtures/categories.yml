@@ -2,8 +2,6 @@
 
 one:
   name: MyString
-  post_id: 1
 
 two:
   name: MyString
-  post_id: 1

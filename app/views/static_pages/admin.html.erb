@@ -1,10 +1,14 @@
 <% provide(:title, 'admin' )%>
 <% provide(:title_content, 'I am back!!!') %>
 <div class="container">
-    <%= form_for :new_post, :url => articles_path, :method => :post do |f| %>
-        <div>
-            <%= f.label :title %>
-            <%= f.text_field :title, size: 40 %>
+    <%= form_for :new_post, :url => posts_path, :method => :post do |f| %>
+        <div class="jumbotron">
+            <% categories = Array.new %>
+            <% @categories.each do |c| %>
+                <% categories.append([c.name, c.id]) %>
+            <% end %>
+            <%= f.select :category_value, options_for_select(categories) %>
+            <%= f.text_field :title, :value=>"title", size:40 %>
         </div>
         <div>
             <%= f.text_area :content , size: "120x30" %>
@@ -22,7 +26,7 @@
         <p><%= post.content %></p>
         </li>
         <li>
-        <%= link_to "delete", article_path(post), method: :delete, data: {confirm: "You sure?"} %>
+        <%= link_to "delete", post_path(post), method: :delete, data: {confirm: "You sure?"} %>
         </li>
     <% end %>
 </ul>
