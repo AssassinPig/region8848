@@ -11,24 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140122141703) do
+ActiveRecord::Schema.define(version: 20140125074638) do
 
-  create_table "passages", force: true do |t|
-    t.string   "title"
-    t.string   "content",    limit: 2048
-    t.integer  "catalog"
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.integer  "post_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
-    t.string   "nick"
-    t.string   "email"
-    t.string   "password"
-    t.string   "password_digest"
+  create_table "posts", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "category"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "remember_token"
   end
 
 end

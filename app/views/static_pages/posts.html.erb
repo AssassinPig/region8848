@@ -1,0 +1,5 @@
+<% provide(:title, 'Passages' )%>
+<% provide(:title_content, 'Here are some personal posts') %>
+<ul class="users">
+    <%= render 'shared/post', :posts=>@posts, :category=>1 %>    
+</ul>

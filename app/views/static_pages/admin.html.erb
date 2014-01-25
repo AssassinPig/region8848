@@ -1,29 +1,28 @@
 <% provide(:title, 'admin' )%>
 <% provide(:title_content, 'I am back!!!') %>
-
-    <div class="container">
-    <%= form_for :new_passage, :url => articles_path, :method => :post do |f| %>
-      <div>
-      <%= f.label :title %>
-      <%= f.text_field :title, size: 40 %>
-      </div>
-      <div>
-          <%= f.text_area :content , size: "120x30" %>
-      <span>
-      <%= f.submit %>
-      </span>
-      </div>
+<div class="container">
+    <%= form_for :new_post, :url => articles_path, :method => :post do |f| %>
+        <div>
+            <%= f.label :title %>
+            <%= f.text_field :title, size: 40 %>
+        </div>
+        <div>
+            <%= f.text_area :content , size: "120x30" %>
+        </div>
+        <div>
+            <%= f.submit %>
+        </div>
     <% end %>
-    </div>
+</div>
 
-<ul class="passages">
-    <% @passages.each do |passage| %> 
+<ul class="container">
+    <% @posts.each do |post| %> 
         <li>
-        <p><h1><%= link_to passage.title, '#' %></h1></p>
-        <p><%= passage.content %></p>
+        <p><h1><%= link_to post.title, '#' %></h1></p>
+        <p><%= post.content %></p>
         </li>
         <li>
-        <%= link_to "delete", article_path(passage), method: :delete, data: {confirm: "You sure?"} %>
+        <%= link_to "delete", article_path(post), method: :delete, data: {confirm: "You sure?"} %>
         </li>
     <% end %>
 </ul>

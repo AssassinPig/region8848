@@ -1,25 +1,6 @@
-<% provide(:title, 'Home' )%>
+<% provide(:title, 'Home' ) %>
 <% provide(:title_content, 'This is an example webiste to show personal notes and passages') %>
-<p>
-<% if sign_in? %>
-    <p>
-    <%= current_user.nick %> <br/>
-    <%= link_to "sign out",  sign_out_path, data: {confirm: "You sure?"} %>
-    </p>
-<% else %>
-    <%= form_for :user, :url=>sessions_path, :method=>:post do |f| %>
-        <%= f.label "user name"%>
-        <%= f.text_field :username%>
-        <%= f.label "password"%>
-        <%= f.password_field :password%>
-        <%= f.submit "sign in"%>
-    <% end %>
-    <p>
-    <%= link_to "forget password", new_user_path %>
-    </p>
-    <p>
-    <%= link_to "sign up now!",  new_user_path %>
-    </p>
-<% end %>
-</p>
+<ul class="users">
+    <%= render 'shared/post_item', :post=>@posts.last, :category=>0 %>    
+</ul>
 

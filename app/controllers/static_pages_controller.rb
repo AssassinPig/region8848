@@ -1,17 +1,20 @@
 class StaticPagesController < ApplicationController
   def home
+      @posts = Post.all
       Rails.logger.debug("home action") 
       Rails.logger.debug(params);
   end
 
   def notes
-      @passages = Passages.all
-      Rails.logger.debug("get passages") 
-      Rails.logger.debug(@passages) 
+      @posts = Post.all
+      Rails.logger.debug("get posts") 
+      Rails.logger.debug(@posts) 
   end
 
-  def passages
-      @passages = Passages.all
+  def posts
+      @posts = Post.all
+      Rails.logger.debug("get posts") 
+      Rails.logger.debug(@posts) 
   end
 
   def about_me
@@ -19,7 +22,7 @@ class StaticPagesController < ApplicationController
 
   def admin
       if params[:password][:password] == "654321"
-        @passages = Passages.all
+        @posts = Post.all
         Rails.logger.debug("ok admin") 
         flash.now[:success] = "welcome!!!" 
       else 

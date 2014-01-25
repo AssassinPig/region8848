@@ -1,0 +1,9 @@
+<% @posts.each do |post| %> 
+    <% if category == 0 %>
+        <%= render 'shared/post_item', :post=>post %>    
+    <% else %>
+        <% if post.category == category %>
+            <%= render 'shared/post_item', :post=>post %>    
+        <% end %>
+    <% end %>
+<% end %>

@@ -1,12 +1,5 @@
 <% provide(:title, 'Notes' )%>
 <% provide(:title_content, 'Here are some personal notes') %>
 <ul class="users">
-    <% @passages.each do |passage| %> 
-        <% if passage.catalog < 100%>
-            <li>
-            <p><h1><%= passage.title %></h1></p>
-            <p><%= passage.content %></p>
-            </li>
-        <% end %>
-    <% end %>
+    <%= render 'shared/post', :posts=>@posts, :category=>0 %>    
 </ul>

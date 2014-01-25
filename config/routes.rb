@@ -6,10 +6,10 @@ Region8848::Application.routes.draw do
 
   get "/sign_out" => 'sessions#destroy'
 
-  get "static_pages/home"
-  get "static_pages/notes"
-  get "static_pages/passages"
-  get "static_pages/about_me"
+  get "static_pages/home"  => 'static_pages#home'
+  get "static_pages/notes" => 'static_pages#notes'
+  get "static_pages/posts" => 'static_pages#posts'
+  get "static_pages/about_me" => 'static_pages#about_me'
 
   post "static_pages/admin" => 'static_pages#admin'
 
