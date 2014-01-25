@@ -27,4 +27,13 @@ class PostsController < ApplicationController
       redirect_to root_path
     end
   end
+
+  def destroy
+    @post = Post.find(params[:id])
+    if !@post.nil? 
+      @post.destroy
+    end
+
+      redirect_to root_path
+  end
 end
