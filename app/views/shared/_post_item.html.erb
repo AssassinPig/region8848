@@ -1,6 +1,12 @@
 <% if !post.nil? %>
-<li>
-<p><h1><%= post.title %></h1></p>
-<p><%= markdown(post.content)%></p>
-</li>
+    <p><h1><%= post.title %></h1></p>
+    &nbsp&nbsp
+    <span><span class="glyphicon glyphicon-calendar"></span> Time:
+        <%= time_ago_in_words(post.created_at)%></span>
+    Ago &nbsp&nbsp&nbsp
+    <span><span class="glyphicon glyphicon-tags"></span> Tags:
+        <%= get_category_tag(post.category_id) %></span>
+    <div class="jumbotron">
+    <%= markdown(post.content)%>
+    </div>
 <% end %>

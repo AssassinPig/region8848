@@ -1,13 +1,29 @@
-<% @posts.each do |post| %> 
-    <% if category == 0 %>
-        <li>
-        <p><%= link_to post.title,  post_path(post) %></p>
-        </li>
-    <% else %>
-        <% if category == post.category_id %>
-            <li>
-            <p><%= link_to post.title,  post_path(post) %></p>
-            </li>
+<div class="panel panel-default">
+    <% @posts.each do |post| %> 
+        <% if category == 0 %>
+            <div class="panel-body">
+                <%= link_to post.title,  post_path(post) %>
+            </div>
+            <div class="panel-footer">
+                <span><span class="glyphicon glyphicon-calendar"></span> Time:
+                    <%= time_ago_in_words(post.created_at)%></span>
+                Ago&nbsp&nbsp&nbsp
+                <span><span class="glyphicon glyphicon-tags"></span> Tags:
+                    <%= get_category_tag(post.category_id) %></span>
+            </div> 
+        <% else %>
+            <% if category == post.category_id %>
+                <div class="panel-body">
+                    <%= link_to post.title,  post_path(post) %>
+                </div>
+                <div class="panel-footer">
+                    <span><span class="glyphicon glyphicon-calendar"></span> Time:
+                        <%= time_ago_in_words(post.created_at)%></span>
+                    Ago&nbsp&nbsp&nbsp
+                    <span><span class="glyphicon glyphicon-tags"></span> Tags:
+                        <%= get_category_tag(post.category_id) %></span>
+                </div> 
+            <% end %>
         <% end %>
     <% end %>
-<% end %>
+</div>

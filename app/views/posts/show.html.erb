@@ -1,3 +1,5 @@
+<% provide(:title, get_category_tag(@post.category) ) %>
+<% provide(:title_content, "This is #{get_category_tag(@post.category)} category") %>
 <div class="container">
     <%= render 'shared/post_item', :post=>@post, :category=>0 %>    
 </div>
