@@ -3,6 +3,7 @@ Region8848::Application.routes.draw do
   resources :sessions
   resources :users
   resources :posts
+  resources :categories
 
   get "/sign_out" => 'sessions#destroy'
 

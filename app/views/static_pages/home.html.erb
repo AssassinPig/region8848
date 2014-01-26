@@ -1,6 +1,7 @@
 <% provide(:title, 'Home' ) %>
 <% provide(:title_content, 'This is an example webiste to show personal notes and passages') %>
+<div class="container bs-docs-container">
 <ul class="users">
     <%= render 'shared/post_item', :post=>@posts.last, :category=>0 %>    
 </ul>
-
+</div>

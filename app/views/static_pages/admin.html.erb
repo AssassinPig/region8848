@@ -2,7 +2,7 @@
 <% provide(:title_content, 'I am back!!!') %>
 <div class="container">
     <%= form_for :new_post, :url => posts_path, :method => :post do |f| %>
-        <div class="jumbotron">
+        <div>
             <% categories = Array.new %>
             <% @categories.each do |c| %>
                 <% categories.append([c.name, c.id]) %>
@@ -11,23 +11,37 @@
             <%= f.text_field :title, :value=>"title", size:40 %>
         </div>
         <div>
-            <%= f.text_area :content , size: "120x30" %>
+            <%= f.text_area :content , cols:60, rows:20 %>
         </div>
         <div>
-            <%= f.submit %>
+            <%= f.submit "save post"%>
         </div>
     <% end %>
 </div>
 
-<ul class="container">
-    <% @posts.each do |post| %> 
-        <li>
-        <p><h1><%= link_to post.title, '#' %></h1></p>
-        <p><%= post.content %></p>
-        </li>
-        <li>
-        <%= link_to "delete", post_path(post), method: :delete, data: {confirm: "You sure?"} %>
-        </li>
+<div class="container">
+    <ul>
+        <% @posts.each do |post| %> 
+            <li>
+            <%= link_to post.title, post_path(post) %>
+            <%= link_to "delete", post_path(post), method: :delete, data: {confirm: "Are you sure?"} %>
+            </li>
+        <% end %>
+    </ul>
+</div>
+
+<div class="container">
+    <ul>
+        <% @categories.each do |c| %>
+            <li>
+            <%= label c, c.name %> 
+            <%= link_to "delete", category_path(c), method: :delete, data: {confirm: "Are you sure?" }%>
+            </li>
+        <% end %>
+    </ul>
+    <%= form_for :new_category, :url => categories_path, :method => :post do |f| %>
+        <%= f.text_field :name, :value=>"new category", size:40 %>
+        <%= f.submit "new category"%>
     <% end %>
-</ul>
+</div>
 
