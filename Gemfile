@@ -40,6 +40,9 @@ end
 gem 'bootstrap-sass'
 gem 'will_paginate'
 
+gem 'redcarpet'
+gem 'coderay'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
