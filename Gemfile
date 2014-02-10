@@ -41,6 +41,9 @@ gem 'bootstrap-sass'
 gem 'will_paginate'
 
 gem 'redcarpet'
+#gem 'rouge'
+#gem 'nokogiri'
+#gem 'auto-space'
 gem 'coderay'
 
 # Use ActiveModel has_secure_password

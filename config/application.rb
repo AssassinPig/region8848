@@ -21,3 +21,4 @@ module Region8848
     # config.i18n.default_locale = :de
   end
 end
+
