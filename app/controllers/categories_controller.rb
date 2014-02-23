@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  before_filter :fetch_all_category
+
   def new
   end
 
@@ -15,6 +17,8 @@ class CategoriesController < ApplicationController
   end
 
   def show
+      @posts = Post.where("category_id=?", params[:id])
+      render :template =>'static_pages/posts'      
   end
 
   def destroy
@@ -26,4 +30,9 @@ class CategoriesController < ApplicationController
 
   def update
   end
+
+  private
+    def fetch_all_category
+      @categories = Category.all
+    end
 end

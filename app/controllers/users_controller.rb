@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
   def new
-    #flash.now[:success] = "user controller new"
-    #redirect_to root_path
   end
 
   def create

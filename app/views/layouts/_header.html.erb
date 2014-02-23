@@ -7,7 +7,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a href="#" class="navbar-brand">Region8848</a>
+        <a href="<%= static_pages_home_path %>" class="navbar-brand">Region8848</a>
     </div>
     <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
     <ul class="nav navbar-nav">
@@ -15,13 +15,13 @@
         <%= link_to "主页", static_pages_home_path %>
         </li>
         <li>
-        <%= link_to "随手日记", static_pages_notes_path %>
-        </li>
-        <li>
-        <%= link_to "技术类文章", static_pages_posts_path %>
+        <%= link_to "文章日记", static_pages_posts_path %>
         </li>
         <li>
         <%= link_to "关于我", static_pages_about_me_path %>
+        </li>
+        <li>
+        <%= link_to "感谢", static_pages_thanks_path %>
         </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">

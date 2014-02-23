@@ -6,7 +6,17 @@
     Ago &nbsp&nbsp&nbsp
     <span><span class="glyphicon glyphicon-tags"></span> Tags:
         <%= get_category_tag(post.category_id) %></span>
+    &nbsp&nbsp&nbsp
+    <span><span class="glyphicon glyphicon-eye-open"></span> View 
+    Times: 
+        <%= post.view_times %></span>
     <div class="jumbotron">
-    <%= markdown(post.content)%>
+        <p><%= markdown(post.content)%></p>
     </div>
+
+    <% if !@comments.nil? %>
+        <%= render 'shared/comments', :comments=>@comments %>    
+        <%= render 'shared/comment_form', :comment=>@comment %>    
+    <% end %>
+
 <% end %>

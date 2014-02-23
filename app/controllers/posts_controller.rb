@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_filter :fetch_all_category
+
   def new
   end
 
@@ -19,13 +21,18 @@ class PostsController < ApplicationController
   end
 
   def index
+      @categories = Category.all
   end
 
   def show
     @post = Post.find(params[:id])
+    @post.increase_view_times
+    @categories = Category.all
     if @post.nil? 
       redirect_to root_path
     end
+    @comments = @post.comments.all
+    @comment = @post.comments.build
   end
 
   def destroy
@@ -34,6 +41,29 @@ class PostsController < ApplicationController
       @post.destroy
     end
 
-      redirect_to root_path
+    redirect_to root_path
   end
+
+  def edit
+    @post = Post.find(params[:id])
+    if @post.nil? 
+      redirect_to root_path
+    end
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.nil? 
+      redirect_to root_path
+    end
+    
+    @post.update_attributes params[:post].permit(:content)
+    redirect_to post_path(@post)
+  end
+
+  private
+    def fetch_all_category
+      @categories = Category.all
+    end
+
 end

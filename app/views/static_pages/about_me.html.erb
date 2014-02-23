@@ -1,68 +1,74 @@
 <% provide(:title, 'About me' )%>
 <% provide(:title_content, 'we can contact') %>
 
-<div class="container">
-    <ul>
-        <%= gravatar_for %>
-        <li>
-        <label>ID:</label>
-        <span class="ID">AssassinPig</span>
-        </li>
+<div class="jumbotron">
+<p>
+<ul>
+    <span><%= gravatar_for %></span>
+    <li>
+    <label>ID:</label>
+    <span class="ID">AssassinPig</span>
+    </li>
 
-        <li>
-        <label>Name:</label>
-        <span class="Name">zhufeng</span>
-        </li>
+    <li>
+    <label>Name:</label>
+    <span class="Name">zhufeng</span>
+    </li>
 
-        <li>
-        <label>interest:</label>
-        <span class="interest">football/SC2</span>
-        </li>
+    <li>
+    <label>interest:</label>
+    <span class="interest">football/SC2</span>
+    </li>
 
-        <li>
-        <label>field:</label>
-        <span class="interest">
-            game programming/web service development
-        </span>
-        </li>
+    <li>
+    <label>field:</label>
+    <span class="interest">
+        game programming/web development
+    </span>
+    </li>
 
-        <li class="adr">
-        <label>city:</label>
-        <span class="region">上海</span>
-        </li>
+    <li class="adr">
+    <label>city:</label>
+    <span class="region">Shanghai/Jinan</span>
+    </li>
 
-        <li class="adr">
-        <label>company:</label>
-        <span class="org">delete.com</span>
-        </li>
+    <li class="adr">
+    <label>company:</label>
+    <span class="org">delete.com</span>
+    </li>
 
-        <li>
-        <label>target:</label>
-        <span>始终不渝就没有失败</span>
-        </li>
+    <li>
+    <label>target:</label>
+    <span>始终不渝就没有失败</span>
+    </li>
 
-        <li>
-        <label>blog since:</label>
-        <span>2014年1月14日</span>
-        </li>
+    <li>
+    <label>blog since:</label>
+    <span>2014年1月14日</span>
+    </li>
 
-        <li>
-        <label>git hub:</label>
-        <span>zserver/zsiper</span>
-        </li>
+    <li>
+    <label>git hub:</label>
+    <a href="https://github.com/AssassinPig">https://github.com/AssassinPig</a>
+    </li>
 
-        <li>
-        <label>Email:</label>
-        <span class="email">AssassinPig@gmail.com</span>
-        </li>
+    <li>
+    <label>other projects:</label>
+    <a href="http://git.oschina.net/assassinpig">http://git.oschina.net/assassinpig</a>
+    </li>
 
-        <li>
-        <%= form_for(:password, url: static_pages_admin_path) do |f| %>
-            <%= f.password_field :password %>
-            <%= f.submit "admin", class: "btn btn-success" %>
-        <% end %>
-        </li>
+    <li>
+    <label>Email:</label>
+    <a href="mailto:assassinpig@gmail.com">assassinpig@gmail.com</a>
+    </li>
 
-    </ul>
+    <li>
+    <%= form_for(:password, url: static_pages_admin_path) do |f| %>
+        <%= f.password_field :password %>
+        <%= f.submit "admin", class: "btn btn-success" %>
+    <% end %>
+    </li>
+</ul>
+</p>
 </div>
 

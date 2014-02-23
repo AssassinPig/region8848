@@ -1,0 +1,15 @@
+<p>
+<div class="panel panel-default">
+    <% if @comments.count > 0 %>
+        <% @comments.each do |c| %>
+            <div class="panel-body">
+                <%= c.content %>
+            </div>
+            <div class="panel-footer">
+                <%= c.name%>
+                <%= c.created_at%>
+            </div>
+        <% end %>
+    <% end %>
+</div>
+</p>

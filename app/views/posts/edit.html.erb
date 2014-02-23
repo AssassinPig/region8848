@@ -1,0 +1,14 @@
+<% provide(:title, get_category_tag(@post.category) ) %>
+<% provide(:title_content, "This is #{get_category_tag(@post.category)} category") %>
+<%= form_for @post do |f| %>
+    <fieldset>
+        <div class="row">
+            <div class="small-12 columns">
+                <%= f.text_area :content, rows: 20 %>
+            </div>
+            <div class="small-6 columns">
+                <%= f.submit "save", method: :put, class: "button prefix sign-button" %>
+            </div>
+        </div>
+    </fieldset>
+<% end %>

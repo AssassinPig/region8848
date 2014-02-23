@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Region8848</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-    <link href="http://v3.bootcss.com/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://v3.bootcss.com/docs-assets/css/docs.css" rel="stylesheet">
-    <link href="http://cdn.bootcss.com/highlight.js/7.3/styles/github.min.css" rel="stylesheet">
-</head>
-<body data-offset="50">
-    <%= render 'layouts/header' %>
-    <div class="bs-header" id="content">
-        <div class="container">
-           <h1><%= yield(:title) %></h1>
-           <p><%= yield(:title_content) %></p>
+    <head>
+        <title>Region8848</title>
+        <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+        <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+        <%= csrf_meta_tags %>
+        <link href="http://v3.bootcss.com/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="http://v3.bootcss.com/docs-assets/css/docs.css" rel="stylesheet">
+        <link href="http://cdn.bootcss.com/highlight.js/7.3/styles/github.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <%= render 'layouts/header' %>
+        <div class="bs-header">
+            <div class="container">
+                <h1><%= yield(:title) %></h1>
+                <p><%= yield(:title_content) %></p>
+            </div>
         </div>
-    </div>
 
-    <%= yield %>
-
-    <%= render 'layouts/footer' %>
-    <%= debug(params) if Rails.env.development? %>
-</body>
+        <div class="container bs-docs-container">
+            <div class="row">
+                <div class="col-md-9" role="main">
+                    <div class="bs-docs-section">
+                        <%= yield %>
+                    </div>
+                </div>
+                <div class="col-md-3" role="complementary">
+                    <div class="bs-sidebar hidden-print affix-top" >
+                        <%= render 'layouts/sidebar' %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%= render 'layouts/footer' %>
+        <%= debug(params) if Rails.env.development? %>
+    </body>
 </html>

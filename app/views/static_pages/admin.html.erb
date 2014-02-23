@@ -1,7 +1,6 @@
 <% provide(:title, 'admin' )%>
 <% provide(:title_content, 'I am back!!!') %>
 
-<div class="container">
     <%= form_for :new_post, :url => posts_path, :method => :post do |f| %>
         <div>
             <% categories = Array.new %>
@@ -18,20 +17,17 @@
             <%= f.submit "save post"%>
         </div>
     <% end %>
-</div>
 
-<div class="container">
     <ul>
         <% @posts.each do |post| %> 
             <li>
             <%= link_to post.title, post_path(post) %>
+            <%= link_to "edit", edit_post_path(post) %>
             <%= link_to "delete", post_path(post), method: :delete, data: {confirm: "Are you sure?"} %>
             </li>
         <% end %>
     </ul>
-</div>
 
-<div class="container">
     <ul>
         <% @categories.each do |c| %>
             <li>
@@ -44,5 +40,4 @@
         <%= f.text_field :name, :value=>"new category", size:40 %>
         <%= f.submit "new category"%>
     <% end %>
-</div>
 
