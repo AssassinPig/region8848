@@ -3,12 +3,12 @@ class StaticPagesController < ApplicationController
 
   def home
     @posts = Post.all
-    @categories = Category.all
+    #@categories = Category.all
   end
 
   def posts
     @posts = Post.all
-    @categories = Category.all
+    #@categories = Category.all
   end
 
   def about_me
@@ -27,8 +27,4 @@ class StaticPagesController < ApplicationController
   def thanks
   end
 
-  private
-  def fetch_all_category
-    @categories = Category.all
-  end
 end

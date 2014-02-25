@@ -40,6 +40,6 @@ ActiveRecord::Schema.define(version: 20140222160215) do
     t.integer  "view_times",  default: 0
   end
 
-  add_index "posts", ["category_id"], name: "index_posts_on_category_id", unique: true, using: :btree
+  add_index "posts", ["category_id"], name: "index_posts_on_category_id", using: :btree
 
 end

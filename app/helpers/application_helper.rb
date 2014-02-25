@@ -19,4 +19,8 @@ module ApplicationHelper
       CodeRay.scan(code, language).div(:tab_width=>2)
     end
   end
+
+  def fetch_all_category
+    @categories = Category.all
+  end
 end

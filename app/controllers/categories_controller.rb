@@ -31,8 +31,4 @@ class CategoriesController < ApplicationController
   def update
   end
 
-  private
-  def fetch_all_category
-    @categories = Category.all
-  end
 end
