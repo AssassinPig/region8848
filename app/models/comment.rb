@@ -7,5 +7,5 @@ class Comment < ActiveRecord::Base
   validates :website, length: {maximum: 255}
 
   belongs_to :post
-  
+
 end

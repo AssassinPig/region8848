@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def create
     flash.now[:success] = "user controller create"
-    
+
     username = params[:user][:username] 
     email = params[:user][:email] 
     password = params[:user][:password] 

@@ -5,34 +5,34 @@ class CategoriesController < ApplicationController
   end
 
   def create
-      category = Category.create(:name=>params[:new_category][:name])
-      if category.nil?
-        redirect_to root_path
-      end
-    
-      redirect_to root_path 
+    category = Category.create(:name=>params[:new_category][:name])
+    if category.nil?
+      redirect_to root_path
+    end
+
+    redirect_to root_path 
   end
 
   def index
   end
 
   def show
-      @posts = Post.where("category_id=?", params[:id])
-      render :template =>'static_pages/posts'      
+    @posts = Post.where("category_id=?", params[:id])
+    render :template =>'static_pages/posts'      
   end
 
   def destroy
-      category = Category.find(params[:id])
-      category.destroy
+    category = Category.find(params[:id])
+    category.destroy
 
-      redirect_to root_path 
+    redirect_to root_path 
   end
 
   def update
   end
 
   private
-    def fetch_all_category
-      @categories = Category.all
-    end
+  def fetch_all_category
+    @categories = Category.all
+  end
 end

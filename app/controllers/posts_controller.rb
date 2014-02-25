@@ -7,21 +7,20 @@ class PostsController < ApplicationController
   def create
     category = Category.find(params[:new_post][:category_value])
     post = Post.create(:title=>params[:new_post][:title],
-                      :content=>params[:new_post][:content],
-                      :category_id=>category.id
-                      )
-  
-    if post.nil?
-      flash[:error] = "invalid username or password"
-      redirect_to root_path
-    end
-    
-    flash[:success] = "create post success"
-    redirect_to root_path  
+                       :content=>params[:new_post][:content],
+                       :category_id=>category.id)
+
+                      if post.nil?
+                        flash[:error] = "invalid username or password"
+                        redirect_to root_path
+                      end
+
+                      flash[:success] = "create post success"
+                      redirect_to root_path  
   end
 
   def index
-      @categories = Category.all
+    @categories = Category.all
   end
 
   def show
@@ -56,14 +55,14 @@ class PostsController < ApplicationController
     if @post.nil? 
       redirect_to root_path
     end
-    
+
     @post.update_attributes params[:post].permit(:content)
     redirect_to post_path(@post)
   end
 
   private
-    def fetch_all_category
-      @categories = Category.all
-    end
+  def fetch_all_category
+    @categories = Category.all
+  end
 
 end
