@@ -1,14 +1,12 @@
 class StaticPagesController < ApplicationController
   before_filter :fetch_all_category
+  before_filter :fetch_all_posts, :only=>[:home, :posts]
 
   def home
-    @posts = Post.all
-    #@categories = Category.all
   end
 
   def posts
-    @posts = Post.all
-    #@categories = Category.all
+    @posts=@posts.paginate(:page=>params[:page])
   end
 
   def about_me
@@ -16,7 +14,6 @@ class StaticPagesController < ApplicationController
 
   def admin
     if params[:password][:password] == "654321"
-      @posts = Post.all
       flash.now[:success] = "welcome!!!" 
     else 
       flash.now[:error] = "you can't do this"
@@ -26,5 +23,10 @@ class StaticPagesController < ApplicationController
 
   def thanks
   end
+
+  private
+    def fetch_all_posts
+      @posts = Post.all
+    end
 
 end

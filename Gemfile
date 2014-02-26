@@ -6,8 +6,10 @@ gem 'rails', '4.0.2'
 
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
-group :development do
+group :development, :test do
     gem 'mysql2'
+    gem 'factory_girl_rails'
+    gem 'rspec-rails'
 end
 
 # Use SCSS for stylesheets
@@ -41,9 +43,6 @@ gem 'bootstrap-sass'
 gem 'will_paginate'
 
 gem 'redcarpet'
-#gem 'rouge'
-#gem 'nokogiri'
-#gem 'auto-space'
 gem 'coderay'
 
 # Use ActiveModel has_secure_password

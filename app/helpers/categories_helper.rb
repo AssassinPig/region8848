@@ -1,7 +1,6 @@
 module CategoriesHelper
   def get_category_tag(id)
     category = Category.find(id)
-    Rails.logger.debug(category)
     if category.nil?
       category.name = "default category" 
     end

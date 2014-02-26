@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_filter :fetch_all_category
+  before_filter :fetch_all_category 
 
   def new
   end
@@ -19,13 +19,11 @@ class PostsController < ApplicationController
   end
 
   def index
-    @categories = Category.all
   end
 
   def show
     @post = Post.find(params[:id])
     @post.increase_view_times
-    @categories = Category.all
     if @post.nil? 
       redirect_to root_path
     end
