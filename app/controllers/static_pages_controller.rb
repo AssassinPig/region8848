@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   before_filter :fetch_all_category
-  before_filter :fetch_all_posts, :only=>[:home, :posts]
+  before_filter :fetch_all_posts, :only=>[:home, :posts, :admin]
 
   def home
   end

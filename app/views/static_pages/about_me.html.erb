@@ -1,74 +1,75 @@
 <% provide(:title, 'About me' )%>
 <% provide(:title_content, 'we can contact') %>
 
-<div class="jumbotron">
-<p>
-<ul>
-    <span><%= gravatar_for %></span>
-    <li>
-    <label>ID:</label>
-    <span class="ID">AssassinPig</span>
-    </li>
+<div class="bs-docs-section">
+    <div class="page-header">
+        <h1>关于我和这个Blog</h1>
+    </div>
+    <p class="lead">
+    本人是一个4年游戏开发经验的程序...<br>
+    在工作之余接触到Ruby和Rails...<br>
+    随后在工作之中使用Ruby...<br>
+    随后开始学习使用Rails...<br>
+    再然后就有了这个Blog...<br>
+    </p>
+</div>
 
-    <li>
-    <label>Name:</label>
-    <span class="Name">zhufeng</span>
-    </li>
+<div class="bs-docs-section">
+    <div class="page-header">
+        <h1>详细一点</h1>
+    </div>
+    <%= gravatar_for %>
 
-    <li>
-    <label>interest:</label>
-    <span class="interest">football/SC2</span>
-    </li>
+    <% table_hash=Hash.new %>
+    <% table_hash['ID']='AssassinPig' %>
+    <% table_hash['Name']='zhufeng' %>
+    <% table_hash['Field']='game programming/web development' %>
+    <% table_hash['Interest']='Football/Starcarft II' %>
+    <% table_hash['City']="Shanghai/Ji\'nan" %>
+    <% table_hash['Faith']="始终不渝就没有失败" %>
+    <% table_hash['Focus On']="东亚足球和中国近现代社会20年" %>
 
-    <li>
-    <label>field:</label>
-    <span class="interest">
-        game programming/web development
-    </span>
-    </li>
+    <table class="table">
+        <% table_hash.each do |k,v|%>
+            <tr>
+                <td>
+                    <label><%=k%></label>
+                </td>
+                <td>
+                    <%= v%>
+                </td>
+            </tr>
+        <% end %>
+        <tr>
+            <td>
+                <label>Github</label>
+            </td>
+            <td>
+                <a href="https://github.com/AssassinPig">https://github.com/AssassinPig</a>
+            </td>
+        </tr>
+        <tr>
+            <td><label>other projects</label>
+            </td>
+            <td>
+            <a href="http://git.oschina.net/assassinpig">http://git.oschina.net/assassinpig</a>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Email</label>
+            </td>
+            <td>
+            <a href="mailto:assassinpig@gmail.com">assassinpig@gmail.com</a>
+            </td>
+        </tr>
+    </table>
+</div>
 
-    <li class="adr">
-    <label>city:</label>
-    <span class="region">Shanghai/Jinan</span>
-    </li>
-
-    <li class="adr">
-    <label>company:</label>
-    <span class="org">delete.com</span>
-    </li>
-
-    <li>
-    <label>target:</label>
-    <span>始终不渝就没有失败</span>
-    </li>
-
-    <li>
-    <label>blog since:</label>
-    <span>2014年1月14日</span>
-    </li>
-
-    <li>
-    <label>git hub:</label>
-    <a href="https://github.com/AssassinPig">https://github.com/AssassinPig</a>
-    </li>
-
-    <li>
-    <label>other projects:</label>
-    <a href="http://git.oschina.net/assassinpig">http://git.oschina.net/assassinpig</a>
-    </li>
-
-    <li>
-    <label>Email:</label>
-    <a href="mailto:assassinpig@gmail.com">assassinpig@gmail.com</a>
-    </li>
-
-    <li>
+<div class="bs-docs-section">
+    <div class="page-header"></div>
     <%= form_for(:password, url: static_pages_admin_path) do |f| %>
         <%= f.password_field :password %>
         <%= f.submit "admin", class: "btn btn-success" %>
     <% end %>
-    </li>
-</ul>
-</p>
 </div>
 
