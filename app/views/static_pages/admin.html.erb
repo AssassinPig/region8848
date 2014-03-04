@@ -1,6 +1,10 @@
 <% provide(:title, 'admin' )%>
 <% provide(:title_content, 'I am back!!!') %>
 
+<div class="bs-docs-section">
+    <div class="page-header">
+        <h1>新文章</h1>
+    </div>
     <%= form_for :new_post, :url => posts_path, :method => :post do |f| %>
         <div>
             <% categories = Array.new %>
@@ -17,7 +21,12 @@
             <%= f.submit "save post"%>
         </div>
     <% end %>
+</div>
 
+<div class="bs-docs-section">
+    <div class="page-header">
+        <h1>目前文章列表</h1>
+    </div>
     <ul>
         <% @posts.each do |post| %> 
             <li>
@@ -27,7 +36,12 @@
             </li>
         <% end %>
     </ul>
+</div>
 
+<div class="bs-docs-section">
+    <div class="page-header">
+        <h1>目前分类</h1>
+    </div>
     <ul>
         <% @categories.each do |c| %>
             <li>
@@ -40,4 +54,4 @@
         <%= f.text_field :name, :value=>"new category", size:40 %>
         <%= f.submit "new category"%>
     <% end %>
-
+</div>
