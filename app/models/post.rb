@@ -6,4 +6,5 @@ class Post < ActiveRecord::Base
   def increase_view_times
     update_attributes(:view_times=>view_times+1)
   end
+
 end

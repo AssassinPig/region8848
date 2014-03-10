@@ -17,7 +17,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @posts = Post.where("category_id=?", params[:id])
+    @posts = Post.where("category_id=?", params[:id]).paginate(page: params[:page])
     render :template =>'static_pages/posts'      
   end
 

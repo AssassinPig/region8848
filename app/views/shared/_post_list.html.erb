@@ -3,16 +3,33 @@
         <div class="panel-body">
             <%= link_to post.title,  post_path(post) %>
         </div>
+
         <div class="panel-footer">
-            <span><span class="glyphicon glyphicon-calendar"></span> Time:
-                <%= time_ago_in_words(post.created_at)%></span>
-            Ago&nbsp&nbsp&nbsp
-            <span><span class="glyphicon glyphicon-tags"></span> Tags:
-                <%= get_category_tag(post.category_id) %></span>
-             &nbsp&nbsp&nbsp
-            <span><span class="glyphicon glyphicon-eye-open"></span> View 
-            Times: 
-                <%= post.view_times %></span>
+            <span>
+                <span class="glyphicon glyphicon-calendar">
+                </span>
+                Time: <%= time_ago_in_words(post.created_at)%>
+            </span> Ago&nbsp&nbsp&nbsp
+
+            <span>
+                <span class="glyphicon glyphicon-tags">
+                </span> Tags:
+                <%= get_category_tag(post.category_id) %>
+            </span>
+
+                &nbsp&nbsp&nbsp
+            <span>
+                <span class="glyphicon glyphicon-eye-open">
+                </span>
+                View Times: <%= post.view_times %>
+            </span>
+
+                &nbsp&nbsp&nbsp
+            <span>
+                <span class="glyphicon glyphicon-eye-open">
+                </span>
+                Comments: <%= comments_length(post) %>
+            </span>
         </div> 
     <% end %>
     <%= will_paginate @posts %>

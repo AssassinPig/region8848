@@ -6,8 +6,15 @@
                 <%= c.content %>
             </div>
             <div class="panel-footer">
+                <span>Author: 
                 <%= c.name%>
-                <%= c.created_at%>
+                </span>
+
+                &nbsp&nbsp&nbsp
+
+                <span> 
+                <%= time_ago_in_words(c.created_at) %>
+                </span>Ago
             </div>
         <% end %>
     <% end %>
