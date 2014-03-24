@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140222160215) do
+ActiveRecord::Schema.define(version: 20140311031559) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20140222160215) do
   end
 
   add_index "categories", ["id"], name: "index_categories_on_id", unique: true, using: :btree
+  add_index "categories", ["name"], name: "index_categories_on_name", unique: true, using: :btree
 
   create_table "comments", force: true do |t|
     t.string   "name"
@@ -41,5 +42,14 @@ ActiveRecord::Schema.define(version: 20140222160215) do
   end
 
   add_index "posts", ["category_id"], name: "index_posts_on_category_id", using: :btree
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "password"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

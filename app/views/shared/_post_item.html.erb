@@ -1,5 +1,11 @@
 <% if !post.nil? %>
-    <p><h1><%= post.title %></h1></p>
+    <p>
+    <h1>
+        <post_title>
+        <%= post.title %>
+        </post_title>
+    </h1>
+    </p>
     <div>
         <span>
             <span class="glyphicon glyphicon-calendar">
@@ -10,7 +16,7 @@
         <span>
             <span class="glyphicon glyphicon-tags">
             </span>
-            Tags: <%= get_category_tag(post.category_id) %>
+            Tags: <post_category><%= get_category_tag(post.category_id) %></post_category>
         </span>&nbsp&nbsp&nbsp
 
         <span>
@@ -28,16 +34,22 @@
     </div>
 
     <div class="jumbotron">
-        <p><%= markdown(post.content)%></p>
+        <p>
+            <post_content>
+            <% if !post.content.nil? %>
+                <%= markdown(post.content)%>
+            <% end %>
+            </post_content>
+        </p>
     </div>
 
     <div>
-        <% pre_post = find_previous_post(post)%>
-        <% next_post = find_next_post(post)%>
+        <% pre_post = find_previous_post(post) %>
+        <% next_post = find_next_post(post) %>
 
         <div>
         <% if !pre_post.nil? %>
-            <%= link_to "previous post: "+ pre_post.title , post_path(pre_post) %>
+            <%= link_to "previous post: " + pre_post.title, post_path(pre_post) %>
         <% else %>
             <%= link_to "no previous post", "#" %>
         <% end %>
@@ -45,7 +57,7 @@
 
         <div>
         <% if !next_post.nil? %>
-            <%= link_to "next post: "+next_post.title , post_path(next_post) %>
+            <%= link_to "next post: " + next_post.title, post_path(next_post) %>
         <% else %>
             <%= link_to "no next post", "#" %>
         <% end %>

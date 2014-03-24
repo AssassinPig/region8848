@@ -1,3 +1,4 @@
+#encoding: UTF-8
 class PostsController < ApplicationController
   before_filter :fetch_all_category 
 
@@ -55,6 +56,47 @@ class PostsController < ApplicationController
 
     @post.update_attributes params[:post].permit(:content)
     redirect_to post_path(@post)
+  end
+
+  def add
+  end
+  
+  def save
+    tempfile = params[:post_text][:uploaded_post].tempfile
+    content = tempfile.read
+
+    line=1
+    str_title=String.new
+    str_category=String.new
+
+    content.gsub!(/\r\n?/, "\n")
+    content.each_line do |l|
+      if line==1
+        str_title=l
+      end
+
+      if line == 2
+        str_category=l
+        break
+      end
+      line += 1
+    end
+
+    #str_title.chomp!
+    str_category.chomp!
+    category = Category.find_by_name(str_category)
+    if category.nil?
+      category = Category.create(:name=>str_category)
+    end
+
+    post = category.posts.build(:title=>str_title, :content=>content)
+    if !post.save
+      flash[:error] = "upload failed!"
+    else
+      flash[:success] = "upload success!"
+    end
+    
+    render :action=>'add'
   end
 
   private

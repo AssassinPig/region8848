@@ -1,0 +1,7 @@
+<%= form_for(:post_text,
+url: {action: 'save'},
+html: {multipart: true}) do |form| %>
+    <%= form.text_field("comment")          %>
+    <%= form.file_field("uploaded_post") %>
+    <%= submit_tag("Update file") %>
+<% end %>

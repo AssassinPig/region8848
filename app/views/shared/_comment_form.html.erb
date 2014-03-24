@@ -1,5 +1,6 @@
 <div class="list-group">
     <%= form_for(@comment, :url=>post_comments_path(@post)) do |f| %>
+        <%= render 'shared/error_messages', object:f.object %>
         <div class="list-group-item" >
             <%= f.label "Your Comment" %>
             <%= f.text_area :content, :style=>"margin: 0px; width: 815px; height: 127px;"%>
