@@ -7,22 +7,25 @@ Region8848::Application.routes.draw do
     resources :comments, :only => [:create, :comment_params]
   end
 
-  resources :categories
-  get "/sign_out" => 'sessions#destroy'
+  resources :categories, :only => [:create, :show, :destroy]
+
+  resources :sessions, :only => [:new, :create, :destroy] 
+  get "login" => 'sessions#new'
+  get "logout" => 'sessions#destroy'
 
   get "static_pages/home"  => 'static_pages#home'
   get "static_pages/posts" => 'static_pages#posts'
   get "static_pages/about_me" => 'static_pages#about_me'
   get "static_pages/thanks" => 'static_pages#thanks'
 
-  get "static_pages/admin" => 'static_pages#admin'
+  #get "static_pages/admin" => 'static_pages#admin'
 
- # namespace :admin do
- #   root :to => 'users#home'
- #   post "login" => 'users#login'
- #   resources :users
- #   resources :sessions
- # end
+  # namespace :admin do
+  #   root :to => 'users#home'
+  #   post "login" => 'users#login'
+  #   resources :users
+  #   resources :sessions
+  # end
 
   root 'static_pages#home'
 end

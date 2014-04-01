@@ -5,10 +5,8 @@ ruby '2.0.0'
 gem 'rails', '4.0.3'
 gem 'rails-i18n'
 
-# Use sqlite3 as the database for Active Record
-#gem 'sqlite3'
+gem 'pg'
 group :development, :test do
-    gem 'mysql2'
     gem 'factory_girl_rails'
     gem 'rspec-rails'
 end
@@ -46,14 +44,16 @@ gem 'will_paginate'
 gem 'redcarpet'
 gem 'coderay'
 
+gem 'slim'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
-# gem 'capistrano', group: :development
+gem 'capistrano'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]

@@ -2,7 +2,6 @@ module SessionsHelper
   def sign_in(user)
     @current_user = user
     cookies.permanent[:remember_token] = @current_user.remember_token 
-    Rails.logger.debug("sign user")
   end
 
   def sign_in?
@@ -12,7 +11,6 @@ module SessionsHelper
   def sign_out
     @current_user = nil
     cookies.delete(:remember_token)
-    Rails.logger.debug("sign_out")
   end
 
   def current_user

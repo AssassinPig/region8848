@@ -1,9 +1,6 @@
 class CategoriesController < ApplicationController
   before_filter :fetch_all_category
 
-  def new
-  end
-
   def create
     category = Category.create(:name=>params[:new_category][:name])
     if category.nil?
@@ -11,9 +8,6 @@ class CategoriesController < ApplicationController
     end
 
     redirect_to root_path 
-  end
-
-  def index
   end
 
   def show
@@ -26,9 +20,6 @@ class CategoriesController < ApplicationController
     category.destroy
 
     redirect_to root_path 
-  end
-
-  def update
   end
 
 end

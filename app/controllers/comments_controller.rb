@@ -2,11 +2,12 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params)
-    Rails.logger.debug(comment_params)
     if !@comment.save
-      flash[:error] = "save failed" 
+      flash.now[:error] = "save failed" 
+      redirect_to @post
+    else  
+      redirect_to @post
     end
-    redirect_to @post
   end
 
   def comment_params

@@ -6,5 +6,4 @@ class ApplicationController < ActionController::Base
   include ApplicationHelper
   include CommentsHelper
   include PostsHelper
-  include Admin::UsersHelper
 end
