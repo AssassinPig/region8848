@@ -1,0 +1,63 @@
+body, ul, li, h1, h2, h3, h4, h5, h6, p, form, dl, dt, dd {
+    background-color: #ffffff;
+    font-family: Verdana; font-size: 12px; line-height: 1.5;
+    margin: 0px; padding: 0px; font-size: 12px; font-weight: normal; 
+}
+
+ul { list-style: none; }
+img { border-style: none; }
+div { display:block; }
+
+.header {
+    background-color: #573d7d;
+    margin: auto;
+    height: 50px;
+}
+
+.footer {
+    height: 50px;
+    margin: auto;
+}
+
+.main {
+
+}
+
+.logo {
+    float:left;
+    width: 20%;
+    height: 100%;
+}
+
+.nav_bar {
+    margin: 0 auto;
+    float:left;
+    background-color: #573d7d;
+    height: 100%;
+}
+
+.nav_bar ul {
+    margin: 0 auto;
+    float:left;
+    list-style: none;
+    background-color: #573d7d;
+    height: 100%;
+}
+
+.nav_bar ul li{
+    font-size: 20px;
+    float:left;
+    background-color: #573d7d;
+    height: 100%;
+    width:120px;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin: auto;
+}
+
+.nav_bar ul li a{ margin: auto;}
+
+.nav_bar ul li:hover{
+    float:left;
+    background-color: #ffffff;
+}

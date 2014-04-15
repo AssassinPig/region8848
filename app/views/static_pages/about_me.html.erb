@@ -1,130 +1,151 @@
-<% provide(:title, 'About me' )%>
-<% provide(:title_content, 'we can contact') %>
-
-<div class="bs-docs-section">
-    <div class="page-header">
-        <h1>关于我和这个Blog</h1>
+<div class="main_body">
+    <div class="elem">
+        <div class="elem_header">
+            我的工作期望
+        </div>
+        <div class="elem_body">
+            <p>
+            1 year+ ruby rails开发经验<br>
+            希望从事web开发工作, remote最佳<br>
+            full stack 或者only backend都行,全职fontend最次<br>
+            <a href="http://region8848.herokuapp.com/static_pages/about_me">2013版blog</a><br>
+            </p>
+        </div>
     </div>
-    <p class="lead">
-    this blog=linux+vim+rails+bootstrap+git...<br>
-    本人是一个4年游戏开发经验的程序...<br>
-    在工作之余接触到Ruby和Rails...<br>
-    随后在工作之中使用Ruby...<br>
-    随后开始学习使用Rails...<br>
-    随后就开始做Web...<br>
-    做个人Blog...<br>
-    </p>
-</div>
 
-<div class="bs-docs-section">
-    <div class="page-header">
-        <h1>详细一点</h1>
+    <div class="elem">
+        <div class="elem_header">
+            关于我和这个Blog
+        </div>
+        <div class="elem_body">
+            <p>
+            this blog=linux+vim+rails+bootstrap+git...<br>
+            2013年12月开始动工, 一周后竣工<br>
+            2014年新年添加了自动备份和恢复<br>
+            2014年3月开始改版,前端完全使用手写css+div, 并完善了后台<br>
+            </p>
+        </div>
     </div>
-    <%= gravatar_for %>
 
-    <% table_hash=Hash.new %>
-    <% table_hash['ID']='AssassinPig' %>
-    <% table_hash['Name']='zhufeng' %>
-    <% table_hash['Field']='game programming/web development' %>
-    <% table_hash['Interest']='Football/Starcarft II' %>
-    <% table_hash['City']="Shanghai/Ji\'nan" %>
-    <% table_hash['Faith']="始终不渝就没有失败" %>
-    <% table_hash['Focus On']="东亚足球和中国近现代社会20年" %>
+    <div class="elem">
+        <div class="elem_header">
+            详细一点
+        </div>
+        <div class="elem_body">
+            <p>
+            <%= gravatar_for %>
 
-    <table class="table">
-        <% table_hash.each do |k,v|%>
-            <tr>
-                <td>
-                    <label><%=k%></label>
-                </td>
-                <td>
-                    <%= v%>
-                </td>
-            </tr>
-        <% end %>
-        <tr>
-            <td>
-                <label>Github</label>
-            </td>
-            <td>
-                <a href="https://github.com/AssassinPig">https://github.com/AssassinPig</a>
-            </td>
-        </tr>
-        <tr>
-            <td><label>other projects</label>
-            </td>
-            <td>
-            <a href="http://git.oschina.net/assassinpig">https://gitcafe.com/AssassinPig</a>
-            </td>
-        </tr>
-        <tr>
-            <td><label>Email</label>
-            </td>
-            <td>
-            <a href="mailto:assassinpig@gmail.com">assassinpig@gmail.com</a>
-            </td>
-        </tr>
-    </table>
-</div>
+            <% table_hash=Hash.new %>
+            <% table_hash['ID']='AssassinPig' %>
+            <% table_hash['Name']='zhufeng' %>
+            <% table_hash['Field']='game programming/web development' %>
+            <% table_hash['Interest']='Football/Starcarft II' %>
+            <% table_hash['City']="Shanghai/Ji\'nan" %>
+            <% table_hash['Faith']="始终不渝就没有失败" %>
+            <% table_hash['Focus On']="东亚足球和中国近现代社会20年" %>
 
-<div class="bs-docs-section">
-    <div class="page-header">
-        <h1>再详细一点</h1>
+            <table class="table">
+                <% table_hash.each do |k,v|%>
+                    <tr>
+                        <td>
+                            <label><%=k%></label>
+                        </td>
+                        <td>
+                            <%= v%>
+                        </td>
+                    </tr>
+                <% end %>
+                <tr>
+                    <td>
+                        <label>Github</label>
+                    </td>
+                    <td>
+                        <a href="https://github.com/AssassinPig">https://github.com/AssassinPig</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>other projects</label>
+                    </td>
+                    <td>
+                        <a href="http://git.oschina.net/assassinpig">https://gitcafe.com/AssassinPig</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Email</label>
+                    </td>
+                    <td>
+                        <a href="mailto:assassinpig@gmail.com">assassinpig@gmail.com</a>
+                    </td>
+                </tr>
+            </table>
+            </p>
+        </div>
     </div>
-    <table class="table">
-        <tr>
-            <td>
-                <label>拥有自信的方面
-                </label>
-            </td>
-            <td>c/cpp 数据结构与算法 设计模式
-            </td>
-        </tr>
 
-        <tr>
-            <td>
-                <label>Web development
-                </label>
-            </td>
-            <td>rails HTML CSS jquery bootstrap  
-            </td>
-        </tr>
+    <div class="elem">
+        <div class="elem_header">
+            再详细一点
+        </div>
+        <div class="elem_body">
+            <p>
+            <table class="table">
+                <tr>
+                    <td>
+                        <label>拥有自信的方面
+                        </label>
+                    </td>
+                    <td>c/cpp 数据结构与算法 设计模式
+                    </td>
+                </tr>
 
-        <tr>
-            <td>
-                <label>可应用的方面
-                </label>
-            </td>
-            <td>stl boost 多线程编程 网络编程(L+W平台)
-            </td>
-        </tr>
+                <tr>
+                    <td>
+                        <label>Web开发 
+                        </label>
+                    </td>
+                    <td>rails HTML CSS jquery bootstrap  
+                    </td>
+                </tr>
 
-        <tr>
-            <td>
-                <label>数据相关方面
-                </label>
-            </td>
-            <td>mysql redis json xml  
-            </td>
-        </tr>
+                <tr>
+                    <td>
+                        <label>可应用的方面
+                        </label>
+                    </td>
+                    <td>stl boost 多线程编程 网络编程(L+W平台)
+                    </td>
+                </tr>
 
-        <tr>
-            <td>
-                <label>熟悉且使用过的
-                </label>
-            </td>
-            <td>rspec python lua++ nodejs protobuf 常用AI算法
-            </td>
-        </tr>
+                <tr>
+                    <td>
+                        <label>数据相关方面
+                        </label>
+                    </td>
+                    <td>mysql redis json xml  
+                    </td>
+                </tr>
 
-        <tr>
-            <td>
-                <label>接触过略懂的
-                </label>
-            </td>
-            <td>常用加密算法 ruby meta programming mechanize 贝叶斯分类
-            </td>
-        </tr>
-    </table>
+                <tr>
+                    <td>
+                        <label>熟悉且使用过的
+                        </label>
+                    </td>
+                    <td>rspec python lua++ nodejs protobuf 常用AI算法
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>接触过略懂的
+                        </label>
+                    </td>
+                    <td>常用加密算法 ruby meta programming mechanize 贝叶斯分类
+                    </td>
+                </tr>
+            </table>
+            </p>
+        </div>
+    </div>
+
 </div>
 

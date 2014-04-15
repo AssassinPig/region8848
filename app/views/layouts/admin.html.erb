@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>region8848 admin</title>
+        <%= stylesheet_link_tag    "admin/admin", media: "all", "data-turbolinks-track" => true %>
+        <%= javascript_include_tag "admin/admin", "data-turbolinks-track" => true %>
+        <%= csrf_meta_tags %>
+    </head>
+    <body>
+        <div class="container">
+                <ul class="nav nav-pills pull-right">
+                    <% if login? %>
+                        <li>
+                        <%= link_to "主页", admin_root_path %>
+                        </li>
+                        <li>
+                        <%= link_to "文章日记", admin_posts_path %>
+                        </li>
+                        <li>
+                        <%= link_to "类别", admin_categories_path %>
+                        </li>
+                        <li>
+                        <%= link_to "退出", admin_logout_path, {method: :delete}  %>
+                        </li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <%= yield %>
+        </div>
+        <%= debug(params) if Rails.env.development? %>
+    </body>
+</html>

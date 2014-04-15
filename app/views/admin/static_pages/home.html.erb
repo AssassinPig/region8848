@@ -1,0 +1,15 @@
+<h1>home</h1>
+<% if login? %>
+    <h2>login</h2>
+<% else %>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-2">
+            <%= form_tag admin_login_path, method: :post %>
+            <%= label_tag t(:username) %>
+            <%= text_field_tag :username,nil,placeholder:t(:username), class:'form-control' %>
+            <%= label_tag t(:password) %>
+            <%= password_field_tag :password, nil, placeholder:t(:password), class:'form-control' %>
+            <%= submit_tag t(:submit), class:'btn btn-default' %>
+        </div>
+    </div>
+<% end %>

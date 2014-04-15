@@ -1,9 +1,17 @@
-<% if !@categories.nil? and @categories.count > 0 %>
-    <div class="sidebar-offcanvas" id="sidebar" role="navigation"> 
-        <div class="list-group">
-            <% @categories.each do |c| %>
-                <a href="<%= category_path(c) %>" class="list-group-item"><%= c.name %></a>
-            <% end %>
-        </div>
+
+<div class="main_sidebar">
+    <div class="sidebar_header">
+       文章分类 
     </div>
-<% end %>
+    <div class="sidebar_body">
+        <ul>
+            <% if !@categories.nil? and @categories.count > 0 %>
+                <% @categories.each do |c| %>
+                    <li>
+                    <a href="<%= category_path(c) %>" class="list-group-item"><%= c.name %></a>
+                    </li>
+                <% end %>
+            <% end %>
+        </ul>
+    </div>
+</div>
