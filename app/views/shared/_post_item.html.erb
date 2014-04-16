@@ -6,13 +6,11 @@
             </post_title>
         </div>
         <div class="elem_body">
-            <p>
             <post_content>
             <% if !post.content.nil? %>
                 <%= markdown(post.content)%>
             <% end %>
             </post_content>
-            </p>
         </div>
         <div class="elem_footer">
             <p>发表日期: <%= time_ago_in_words(post.created_at)%></p>

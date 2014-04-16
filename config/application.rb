@@ -22,6 +22,11 @@ module Region8848
     config.i18n.default_locale = 'zh-CN'
     config.encoding = "utf-8"
     config.time_zone = 'Beijing'
+
+    config.generators do |g|
+      g.test_framework false
+    end
+
   end
 end
 

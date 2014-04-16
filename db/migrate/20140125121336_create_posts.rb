@@ -4,8 +4,11 @@ class CreatePosts < ActiveRecord::Migration
       t.string :title
       t.text :content
       t.integer :category_id
+      t.integer :view_times, default:0 
 
       t.timestamps
     end
+
+    add_index :posts, :category_id
   end
 end

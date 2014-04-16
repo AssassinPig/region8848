@@ -1,7 +1,7 @@
 namespace :db do
   desc "initialize zhufeng's data" 
     task :populate => :environment do
-      Rake::Task['db:reset'].invoke
+      #Rake::Task['db:reset'].invoke
       make_initialize
       make_categories
       make_posts
@@ -11,7 +11,8 @@ end
 def make_initialize
   User.create!( :name => 'assassinpig',
                 :email => 'assassinpig@gmail.com',
-                :password => 'zhuzhushuai')
+                :password => 'zhuzhushuai',
+                :password_confirmation => 'zhuzhushuai')
 end
 
 def make_categories

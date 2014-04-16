@@ -1,8 +1,8 @@
 development:
   adapter:  postgresql 
   database: region8848
-  username: dbuser 
-  password: password 
+  username: assassinpig 
+  password: 123456 
   encoding: utf8
   host: localhost
   pool: 5
@@ -10,8 +10,8 @@ development:
 production:
   adapter:  postgresql 
   database: region8848
-  username: dbuser 
-  password: password 
+  username: assassinpig 
+  password: 123456 
   encoding: utf8
   host: localhost
   pool: 5
@@ -19,8 +19,8 @@ production:
 test:
   adapter:  postgresql 
   database: region8848
-  username: dbuser 
-  password: password 
+  username: assassinpig 
+  password: 123456 
   encoding: utf8
   host: localhost
   pool: 5

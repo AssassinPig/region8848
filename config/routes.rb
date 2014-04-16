@@ -1,31 +1,27 @@
 Region8848::Application.routes.draw do
-  resources :posts do
-    collection do 
-      get "add" => 'posts#add'
-      post "save" => 'posts#save'
-    end
-    resources :comments, :only => [:create, :comment_params]
-  end
-
-  resources :categories, :only => [:create, :show, :destroy]
-
-  resources :sessions, :only => [:new, :create, :destroy] 
-  get "login" => 'sessions#new'
-  get "logout" => 'sessions#destroy'
-
+  root 'static_pages#home'
   get "static_pages/home"  => 'static_pages#home'
   get "static_pages/posts" => 'static_pages#posts'
   get "static_pages/about_me" => 'static_pages#about_me'
   get "static_pages/thanks" => 'static_pages#thanks'
 
-  #get "static_pages/admin" => 'static_pages#admin'
+  resources :posts, :only => [:index, :show]
+  resources :categories, :only => [:index, :show]
 
-  # namespace :admin do
-  #   root :to => 'users#home'
-  #   post "login" => 'users#login'
-  #   resources :users
-  #   resources :sessions
-  # end
+  resources :posts do
+    resources :comments, :only => [:create, :comment_params]
+  end
 
-  root 'static_pages#home'
+  namespace :admin do
+    resources :sessions, :only => [:new, :create, :destroy] 
+
+    get "login" => 'sessions#new'
+    post "login" => 'sessions#create'
+    delete "logout" => 'sessions#destroy'
+    root :to => 'static_pages#home'
+
+    resources :posts
+    resources :categories
+
+  end
 end
