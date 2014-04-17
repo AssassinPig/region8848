@@ -1,37 +1,35 @@
-<div class="main_body">
-    <div class="elem">
-        <div class="elem_header">
-            <post_title>
-            <%= post.title %>
-            </post_title>
-        </div>
-        <div class="elem_body">
-            <post_content>
-            <% if !post.content.nil? %>
-                <%= markdown(post.content)%>
-            <% end %>
-            </post_content>
-        </div>
-        <div class="elem_footer">
-            <p>发表日期: <%= time_ago_in_words(post.created_at)%></p>
-            <p>浏览次数: <%= post.view_times %></p>
-            <p><post_category><%= get_category_tag(post.category_id) %></post_category></p>
-            <p>评论数目: <%= comments_length(post) %></p>
-            <% pre_post = find_previous_post(post) %>
-            <% next_post = find_next_post(post) %>
+<div class="elem">
+    <div class="elem_header">
+        <post_title>
+        <%= post.title %>
+        </post_title>
+    </div>
+    <div class="elem_body">
+        <post_content>
+        <% if !post.content.nil? %>
+            <%= markdown(post.content)%>
+        <% end %>
+        </post_content>
+    </div>
+    <div class="elem_footer">
+        <p>发表日期: <%= time_ago_in_words(post.created_at)%></p>
+        <p>浏览次数: <%= post.view_times %></p>
+        <p><post_category><%= get_category_tag(post.category_id) %></post_category></p>
+        <p>评论数目: <%= comments_length(post) %></p>
+        <% pre_post = find_previous_post(post) %>
+        <% next_post = find_next_post(post) %>
 
-            <% if !pre_post.nil? %>
-                <%= link_to "上一篇: " + pre_post.title, post_path(pre_post) %>
-            <% else %>
-                <%= link_to "上一篇: 没有了", "#" %>
-            <% end %>
-            |
-            <% if !next_post.nil? %>
-                <%= link_to "下一篇: " + next_post.title, post_path(next_post) %>
-            <% else %>
-                <%= link_to "下一篇: 没有了", "#" %>
-            <% end %>
-        </div>
+        <% if !pre_post.nil? %>
+            <%= link_to "上一篇: " + pre_post.title, post_path(pre_post) %>
+        <% else %>
+            <%= link_to "上一篇: 没有了", "#" %>
+        <% end %>
+        |
+        <% if !next_post.nil? %>
+            <%= link_to "下一篇: " + next_post.title, post_path(next_post) %>
+        <% else %>
+            <%= link_to "下一篇: 没有了", "#" %>
+        <% end %>
     </div>
 </div>
 

@@ -1,1 +1,28 @@
-<%= render 'shared/post_item', :post=>@post %>    
+<div class="main_body">
+    <%= render 'shared/post_item', :post=>@post  %>
+    <div class="button_list">
+        <ul>
+            <li>
+            <div class="mybutton">
+                <%= link_to "back", posts_path %>
+            </div>
+            </li>
+            <li>
+
+            <div class="mybutton">
+                <%= link_to "edit", edit_post_path(@post) %>
+            </div>
+            </li>
+            <li>
+
+            <div class="mybutton">
+                <%= link_to "delete", post_path(@post), method: :delete, data: {confirm: "Are you sure?"} %>
+            </div>
+            </li>
+
+        </ul>
+    </div>
+
+    <%= render 'shared/comments' %>
+    <%= render 'shared/comment_form' %>
+</div>

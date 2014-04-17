@@ -1,4 +1,4 @@
-module Admin::SessionsHelper
+module SessionsHelper
   def sign_in(user)
     @current_user = user
     cookies.permanent[:token] = @current_user.token 
@@ -6,6 +6,10 @@ module Admin::SessionsHelper
 
   def sign_in?
     @current_user.nil? && cookies.permanent[:token]
+  end
+
+  def login?
+    sign_in?
   end
 
   def sign_out

@@ -1,0 +1,25 @@
+<div class="main_body">
+    <div class="mybutton">
+        <%= link_to '新建帖子', new_post_path %>
+    </div>
+
+    <% @categories.each do |c| %>
+        <div class="category_list">
+            <div class="category_elem">
+                <div class="elem">
+                    <div class="elem_header">
+                        <%= link_to c.name, category_path(c)%>
+                    </div>
+
+                    <div class="elem_footer">
+                        <p>总帖子数</p>
+                        <p>今日新帖</p>
+                        <p>最新回复</p>
+                        <p>浏览次数</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% end %>
+</div>

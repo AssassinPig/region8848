@@ -1,0 +1,21 @@
+<div class="bs-docs-section">
+    <div class="page-header">
+        <h1>新文章</h1>
+    </div>
+    <%= form_for @post, url:@post.new_record? ? posts_path : post_path(@post), html: {class: "form-horizontal"} do |f| %>
+        <div class="form-group">
+            <% categories = Array.new %>
+            <% @categories.each do |c| %>
+                <% categories.append([c.name, c.id]) %>
+            <% end %>
+            <%= f.select :category_id, options_for_select(categories), class:'form-control' %>
+            <%= f.text_field :title,  class:'form-control' %>
+        </div>
+        <div class="form-group">
+            <%= f.text_area :content , rows:20, class:'form-control'  %>
+        </div>
+        <div class="form-group">
+            <%= f.submit "save post", class:'btn btn-success'%>
+        </div>
+    <% end %>
+</div>

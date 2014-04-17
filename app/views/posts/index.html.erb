@@ -1,0 +1,53 @@
+<div class="main_body">
+        <h1>目前文章列表</h1>
+
+        <div class="mybutton">
+            <%= link_to "新建日志", new_post_path, class:'btn btn-default' %>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <td>
+                        文章标题
+                    </td>
+                    <td>
+                        操作
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <% @posts.each do |post| %> 
+                    <tr>
+                        <td>
+                            <%= post.title %>
+                        </td>
+
+                        <td>
+                            <div class="button_list">
+                                <ul>
+                                    <li>
+                                    <div class="mybutton">
+                                        <%= link_to "show", post_path(post) %>
+                                    </div>
+                                    </li>
+                                    <li>
+                                    <div class="mybutton">
+                                        <%= link_to "edit", edit_post_path(post) %>
+                                    </div>
+                                    </li>
+                                    <li>
+                                    <div class="mybutton">
+                                        <%= link_to "delete", post_path(post), method: :delete, data: {confirm: "Are you sure?"} %>
+                                    </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -3,23 +3,27 @@ class PostsController < ApplicationController
   before_filter :fetch_all_category 
 
   def new
+    @post = Post.new
+    @categories = Category.all
   end
 
   def create
-    category = Category.find(params[:new_post][:category_id])
-    post = category.posts.build(post_params)
-
-    if post.nil?
-      flash.now[:error] = "invalid username or password"
-      redirect_to root_path
+    post = Post.create!(post_params)
+    if post.save
+      redirect_to posts_path
+    else
+      render :new
     end
+  end
 
-    post.save
-    flash.now[:success] = "create post success"
-    redirect_to root_path  
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
   end
 
   def index
+    @posts = Post.all
   end
 
   def show
@@ -43,20 +47,15 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    if @post.nil? 
-      redirect_to root_path
-    end
+    @categories = Category.all
   end
 
   def update
     @post = Post.find(params[:id])
-    if @post.nil? 
-      redirect_to root_path
-    end
-
-    @post.update_attributes params[:post].permit(:content)
+    @post.update(post_params)
     redirect_to post_path(@post)
   end
+
 
   def add
   end
@@ -101,7 +100,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:new_post).permit(:title, :content, :category_id, :view_times)
+    params.require(:post).permit(:title, :content, :category_id)
   end
 
 end

@@ -12,7 +12,8 @@ def make_initialize
   User.create!( :name => 'assassinpig',
                 :email => 'assassinpig@gmail.com',
                 :password => 'zhuzhushuai',
-                :password_confirmation => 'zhuzhushuai')
+                :password_confirmation => 'zhuzhushuai',
+                :admin => 1)
 end
 
 def make_categories

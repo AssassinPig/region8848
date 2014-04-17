@@ -16,8 +16,8 @@ class StaticPagesController < ApplicationController
   end
 
   private
-    def fetch_all_posts
-      @posts = Post.all
-    end
+  def fetch_all_posts
+    @posts = Post.all
+  end
 
 end

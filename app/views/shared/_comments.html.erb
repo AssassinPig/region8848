@@ -1,22 +1,42 @@
-<p>
-<div class="panel panel-default">
+<div class="comment_region">
+
     <% if @comments.count > 0 %>
         <% @comments.each do |c| %>
-            <div class="panel-body">
-                <%= c.content %>
-            </div>
-            <div class="panel-footer">
-                <span>Author: 
-                <%= c.name%>
-                </span>
 
-                &nbsp&nbsp&nbsp
+            <div class="comment">
+                <div class="comment_header">
+                    1楼
+                    <%= time_ago_in_words(c.created_at) %>
+                    Ago
+                </div>
 
-                <span> 
-                <%= time_ago_in_words(c.created_at) %>
-                </span>Ago
+                <div class="comment_body">
+                    <div class="user_avatar">
+                    </div>
+                    <div class="user_name">
+                        <%= c.name%>
+                    </div>
+
+                    <div class="comment_content">
+                        <%= c.content %>
+                    </div>
+                </div>
+
+                <div class="comment_footer">
+                    <span>
+                        点赞
+                    </span>
+                    <span>
+                        编辑
+                    </span>
+                    <span>删除
+                    </span>
+                    <span>引用
+                    </span>
+
+                </div>		
             </div>
+
         <% end %>
     <% end %>
 </div>
-</p>
