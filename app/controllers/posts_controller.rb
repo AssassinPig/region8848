@@ -28,10 +28,10 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @post.increase_view_times
     if @post.nil? 
       redirect_to root_path
     end
+    @post.increase_view_times
     @comments = @post.comments.all
     @comment = @post.comments.build
   end
