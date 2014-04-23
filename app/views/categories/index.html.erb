@@ -1,7 +1,12 @@
 <div class="main_body">
-    <div class="mybutton">
-        <%= link_to '新建帖子', new_post_path %>
-    </div>
+
+    <% if login? %>
+        <div class="mybutton">
+            <%= link_to '新建帖子', new_post_path %>
+        </div>
+    <% else %>
+        <label>登陆后可新建帖子</label>
+    <% end %>
 
     <% @categories.each do |c| %>
         <div class="category_list">
