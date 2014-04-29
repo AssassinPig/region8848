@@ -1,0 +1,7 @@
+<div class="comment_region">
+    <% if @comments.count > 0 %>
+        <% @comments.each do |c| %>
+            <%= render 'comments/comment', comment: c %>
+        <% end %>
+    <% end %>
+</div>

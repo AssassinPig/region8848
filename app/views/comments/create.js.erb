@@ -1,0 +1,6 @@
+<% if @comment.errors.empty? %>
+    $('.comment_region').append('<%= j render @comment %>'); 
+    $('textarea#comment_content').val("");
+    $('input#comment_name').val("");
+    $('input#comment_email').val("");
+<% end %>

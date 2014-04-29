@@ -6,7 +6,9 @@ class CommentsController < ApplicationController
       flash.now[:error] = "save failed" 
       redirect_to @post
     else  
-      redirect_to @post
+      respond_to do |format|
+        format.js
+      end
     end
   end
 

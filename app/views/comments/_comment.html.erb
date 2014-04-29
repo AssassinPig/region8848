@@ -1,0 +1,26 @@
+<div class="comment">
+    <div class="comment_header">
+        1楼
+        <%= time_ago_in_words(comment.created_at) %>
+        Ago
+    </div>
+
+    <div class="comment_body">
+        <div class="user_avatar">
+        </div>
+        <div class="user_name">
+            <%= comment.name%>
+        </div>
+
+        <div class="comment_content">
+            <%= comment.content %>
+        </div>
+    </div>
+
+    <div class="comment_footer">
+        <span>点赞</span>
+        <span>编辑</span>
+        <span>删除</span>
+        <span>引用</span>
+    </div>		
+</div>

@@ -1,5 +1,9 @@
 <div class="main_body">
-    <%= render 'shared/post_item', :post=>@post  %>
+    <div class="post_list">
+        <%= render 'shared/post_item', :post=>@post  %>
+    </div>
+
+    <% if login? %>
     <div class="button_list">
         <ul>
             <li>
@@ -22,7 +26,10 @@
 
         </ul>
     </div>
+    <% end %>
 
-    <%= render 'shared/comments' %>
-    <%= render 'shared/comment_form' %>
+    <%= render 'comments/comments' %>
+    <div class="comment_form">
+        <%= render 'comments/comment_form' %>
+    </div>
 </div>
