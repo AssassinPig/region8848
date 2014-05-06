@@ -1,4 +1,5 @@
 class Admin::PostsController < Admin::ApplicationController
+  before_filter :fetch_all_category 
   def new
     @post = Post.new
     @categories = Category.all

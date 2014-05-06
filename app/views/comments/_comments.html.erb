@@ -1,7 +1,7 @@
 <div class="comment_region">
     <% if @comments.count > 0 %>
-        <% @comments.each do |c| %>
-            <%= render 'comments/comment', comment: c %>
+        <% @comments.each_with_index do |c, i| %>
+            <%= render 'comments/comment', comment: c, i: i+1 %>
         <% end %>
     <% end %>
 </div>

@@ -7,14 +7,14 @@
     <div class="elem_body">
         <post_content>
         <% if !post.content.nil? %>
-            <%= markdown(post.content)%>
+            <%= markdown(post.content) %>
         <% end %>
         </post_content>
     </div>
     <div class="elem_footer">
-        <p>发表日期: <%= time_ago_in_words(post.created_at)%></p>
+        <p>发表日期: <%= time_ago_in_words(post.created_at)%>以前</p>
         <p>浏览次数: <%= post.view_times %></p>
-        <p><post_category><%= get_category_tag(post.category_id) %></post_category></p>
+        <p>所属类别: <post_category><%= get_category_tag(post.category_id) %></post_category></p>
         <p>评论数目: <%= comments_length(post) %></p>
         <% pre_post = find_previous_post(post) %>
         <% next_post = find_next_post(post) %>

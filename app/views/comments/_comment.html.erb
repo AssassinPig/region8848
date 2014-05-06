@@ -1,12 +1,13 @@
 <div class="comment">
     <div class="comment_header">
-        1楼
+        <%= i %>楼
         <%= time_ago_in_words(comment.created_at) %>
         Ago
     </div>
 
     <div class="comment_body">
         <div class="user_avatar">
+        <%= gravatar_for(get_user_by_name(comment.name)) %>
         </div>
         <div class="user_name">
             <%= comment.name%>

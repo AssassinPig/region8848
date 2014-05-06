@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       flash[:success] = "success create session"
       redirect_to forum_path 
     else  
-      flash[:error] = "invalid username or password"
+      flash.now[:error] = "invalid username or password"
       render :new
     end
   end

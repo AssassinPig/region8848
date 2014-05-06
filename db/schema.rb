@@ -39,12 +39,14 @@ ActiveRecord::Schema.define(version: 20140310141358) do
     t.string   "title"
     t.text     "content"
     t.integer  "category_id"
+    t.integer  "user_id"
     t.integer  "view_times",  default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "posts", ["category_id"], name: "index_posts_on_category_id", using: :btree
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -55,5 +57,8 @@ ActiveRecord::Schema.define(version: 20140310141358) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", using: :btree
+  add_index "users", ["name"], name: "index_users_on_name", using: :btree
 
 end

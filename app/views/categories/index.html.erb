@@ -2,7 +2,7 @@
 
     <% if login? %>
         <div class="mybutton">
-            <%= link_to '新建帖子', new_post_path %>
+            <%= link_to '新建帖子', new_post_path, 'data-no-turbolink' => true %>
         </div>
     <% else %>
         <label>登陆后可新建帖子</label>

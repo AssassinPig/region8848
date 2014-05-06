@@ -6,7 +6,7 @@ class StaticPagesController < ApplicationController
   end
 
   def posts
-    @posts=@posts.paginate(:page=>params[:page])
+    @posts = @posts.paginate(:page=>params[:page])
   end
 
   def about_me

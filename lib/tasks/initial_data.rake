@@ -3,7 +3,7 @@ namespace :db do
     task :populate => :environment do
       #Rake::Task['db:reset'].invoke
       make_initialize
-      #make_categories
+      make_categories
       #make_posts
   end
 end

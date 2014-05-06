@@ -37,16 +37,16 @@
                                 </li>
 
                                 <% if login? %>
-                                <li>
-                                <div class="mybutton">
-                                    <%= link_to "edit", edit_post_path(post) %>
-                                </div>
-                                </li>
-                                <li>
-                                <div class="mybutton">
-                                    <%= link_to "delete", post_path(post), method: :delete, data: {confirm: "Are you sure?"} %>
-                                </div>
-                                </li>
+                                    <li>
+                                    <div class="mybutton">
+                                        <%= link_to "edit", edit_post_path(post), 'data-no-turbolink' => true %>
+                                    </div>
+                                    </li>
+                                    <li>
+                                    <div class="mybutton">
+                                        <%= link_to "delete", post_path(post), method: :delete, data: {confirm: "Are you sure?"} %>
+                                    </div>
+                                    </li>
                                 <% end %>
                             </ul>
                         </div>

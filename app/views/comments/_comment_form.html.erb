@@ -1,6 +1,6 @@
 <div class="list-group">
     <%= form_for(@comment, :remote=>true, :url=>post_comments_path(@post)) do |f| %>
-        <%= render 'shared/error_messages', object:f.object %>
+        <%= render 'shared/error_messages', target: f.object %>
         <div class="list-group-item" >
             <%= f.label "Your Comment" %>
             <%= f.text_area :content, :style=>"margin: 0px; width: 815px; height: 127px;"%>
@@ -21,3 +21,15 @@
         <%= f.submit "Submit Comment", method: :put, class:"col-md-12" %>
     <% end %>
 </div>
+<script>
+    $(document).ready(function(){
+        $('input[type=submit]').click(function(){
+            if( $('#comment_name').val() == "")
+                alert('your name must be');
+            if( $('#comment_email').val() == "")
+                alert('your email must be');
+            if( $('#comment_content').val() == "")
+                alert('your content must be');
+        });
+    });
+</script>

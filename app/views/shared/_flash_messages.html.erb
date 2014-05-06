@@ -1,8 +1,8 @@
-<% [:success, :info, :warning, :danger].each do |type| %>
+<% [:success, :info, :warning, :danger, :error].each do |type| %>
     <% if flash[type] %>
-        <div class="alert <% alert-#{type} %>"
-            <a class="close" data-dismiss="alert"></a> | &times;
-            <%= flash[type] %> 
-        </div>
+        <div class="alert alert-#{type}">
+            <a class="close" data-dismiss="alert"> | &times;</a>
+                <%= flash[type] %>
+            </div>
     <% end %>
 <% end %>
