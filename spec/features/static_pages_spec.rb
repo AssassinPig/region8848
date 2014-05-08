@@ -3,7 +3,7 @@ describe "Static pages" do
   describe "Home page" do
     it "should have the content" do
        visit root_path 
-       page.should have_content('Welcome')
+       page.should have_content('主页')
     end
   end
 end
