@@ -27,13 +27,13 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 group :production do
-   gem 'rails_12factor'
+  gem 'rails_12factor'
 end
 
 group :development, :test do
-    gem 'factory_girl_rails'
-    gem 'rspec-rails'
-    gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
+  gem 'capybara'
 end
 
 gem 'rb-readline'
